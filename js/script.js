@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Mettre à jour l'image de fond
     backgroundOverlay.style.backgroundImage = `url('img/${selectedVideo.background}')`;
 
+    /*
     setTimeout(function() {
         // Mettre à jour la source de la vidéo
         videoSource.src = `video/${selectedVideo.video}`;
@@ -44,10 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const video = document.getElementById('background-video');
         video.load();
     }, 3000); // 3000 millisecondes = 5 secondes
-    /*
+    */
     // Mettre à jour la source de la vidéo
     videoSource.src = `video/${selectedVideo.video}`;
-    */
+
 
     // Recharger la vidéo
     const video = document.getElementById('background-video');

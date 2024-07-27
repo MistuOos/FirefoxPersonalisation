@@ -45,6 +45,14 @@ video {
 }
 
 .Raccourcis {
-    position:relative;
-    padding: 20px;
+    background-color:white;
+    position:absolute;
+    margin:10em 5em;
+    padding:1em;
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows:auto;
+    border: 1px solid black;
+    word-wrap: break-word;
 }
