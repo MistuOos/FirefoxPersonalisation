@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom New Tab</title>
+    <title>Contenu avec Vidéo</title>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div class="Container">
-    <div class="Item">
-        Bla Bla
-    </div>
-    <video autoplay loop muted id="bg-video">
+<div class="video-container">
+    <video id="bg-video" autoplay loop muted>
         <source src="video/FondEcran_1.mp4" type="video/mp4">
     </video>
 </div>
-
+<div class="content">
+    <!-- Contenu principal ici -->
+    <h1>Bienvenue</h1>
+    <p>Ce contenu est visible pendant le chargement de la vidéo.</p>
+</div>
 </body>
 </html>
