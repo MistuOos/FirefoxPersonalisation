@@ -7,8 +7,16 @@
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<video autoplay loop muted>
-    <source src="video/FondEcran_1.mp4" type="video/mp4">
-</video>
+<div class="video-wrapper">
+    <video autoplay loop muted id="bg-video">
+        <source src="video/FondEcran_1.mp4" type="video/mp4">
+    </video>
+</div>
+<script>
+    // Attendez que la vidéo soit complètement chargée
+    document.getElementById('bg-video').addEventListener('loadeddata', function() {
+        document.body.classList.add('loaded');
+    });
+</script>
 </body>
 </html>
