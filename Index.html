@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/00cdd54a6e.js" crossorigin="anonymous"></script>
     <title>New Tab</title>
     <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -12,18 +13,30 @@
 <div class="Container">
     <div class="video-container">
         <video id="background-video" autoplay loop muted>
-            <source  id="video-source" src="" type="video/mp4">
+            <source id="video-source" src="" type="video/mp4">
         </video>
     </div>
     <div class="Raccourcis">
-        <div class="Raccourci">
-            PAF
+        <form role="search" onsubmit="performSearch(event)">
+            <label for="msg"></label>
+            <input type="search" id="msg" class="TextZoneBox" placeholder="Search..."/>
+            <button type="submit">Go</button>
+        </form>
+        <div class="Raccourci" id="youtubeShortcut">
+            <i class="fa-brands fa-youtube fa-2xl" style="color: #d20005;"></i>
+            <div class="Titre">Youtube</div>
         </div>
-        <div class="Raccourci">
-            PAF
+        <div class="Raccourci" id="twShortcut">
+            <i class="fa-brands fa-twitch fa-2xl" style="color: #6441a5;"></i>
+            <div class="Titre">Twitch</div>
         </div>
-        <div class="Raccourci">
-            PAF
+        <div class="Raccourci" id="GmailShortcut">
+            <i class="fa-solid fa-envelope fa-2xl" style="color: #c50f05;"></i>
+            <div class="Titre">Gmail</div>
+        </div>
+        <div class="Raccourci" id="UttShortcut">
+            <img class="icone" src="img/UTTLogo.png" alt="">
+            <div class="Titre">UTT</div>
         </div>
     </div>
 </div>
