@@ -6,26 +6,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Liste des fichiers vidéo et des images de fond
     const videos = [
-        { video: 'FondEcran_1.mp4', background: 'FondEcran_1.jpg' },
-        { video: 'FondEcran_2.mp4', background: 'FondEcran_2.jpg' },
-        { video: 'FondEcran_3.mp4', background: 'FondEcran_3.jpg' },
-        { video: 'FondEcran_4.mp4', background: 'FondEcran_4.jpg' },
-        { video: 'FondEcran_5.mp4', background: 'FondEcran_5.jpg' },
-        { video: 'FondEcran_6.mp4', background: 'FondEcran_6.jpg' },
-        { video: 'FondEcran_7.mp4', background: 'FondEcran_7.jpg' },
-        { video: 'FondEcran_8.mp4', background: 'FondEcran_8.jpg' },
-        { video: 'FondEcran_9.mp4', background: 'FondEcran_9.jpg' },
-        { video: 'FondEcran_10.mp4', background: 'FondEcran_10.jpg' },
-        { video: 'FondEcran_11.mp4', background: 'FondEcran_11.jpg' },
-        { video: 'FondEcran_12.mp4', background: 'FondEcran_12.jpg' },
-        { video: 'FondEcran_13.mp4', background: 'FondEcran_13.jpg' },
-        { video: 'FondEcran_14.mp4', background: 'FondEcran_14.jpg' },
-        { video: 'FondEcran_15.mp4', background: 'FondEcran_15.jpg' },
-        { video: 'FondEcran_16.mp4', background: 'FondEcran_16.jpg' },
-        { video: 'FondEcran_17.mp4', background: 'FondEcran_17.jpg' },
-        { video: 'FondEcran_18.mp4', background: 'FondEcran_18.jpg' },
-        { video: 'FondEcran_19.mp4', background: 'FondEcran_19.jpg' },
-        { video: 'FondEcran_20.mp4', background: 'FondEcran_20.jpg' }
+        { video: 'FondEcran_1.mp4', background: 'FondEcran_1.png' },
+        { video: 'FondEcran_2.mp4', background: 'FondEcran_2.png' },
+        { video: 'FondEcran_3.mp4', background: 'FondEcran_3.png' },
+        { video: 'FondEcran_4.mp4', background: 'FondEcran_4.png' },
+        { video: 'FondEcran_5.mp4', background: 'FondEcran_5.png' },
+        { video: 'FondEcran_6.mp4', background: 'FondEcran_6.png' },
+        { video: 'FondEcran_7.mp4', background: 'FondEcran_7.png' },
+        { video: 'FondEcran_8.mp4', background: 'FondEcran_8.png' },
+        { video: 'FondEcran_9.mp4', background: 'FondEcran_9.png' },
+        { video: 'FondEcran_10.mp4', background: 'FondEcran_10.png' },
+        { video: 'FondEcran_11.mp4', background: 'FondEcran_11.png' },
+        { video: 'FondEcran_12.mp4', background: 'FondEcran_12.png' },
+        { video: 'FondEcran_13.mp4', background: 'FondEcran_13.png' },
+        { video: 'FondEcran_14.mp4', background: 'FondEcran_14.png' },
+        { video: 'FondEcran_15.mp4', background: 'FondEcran_15.png' },
+        { video: 'FondEcran_16.mp4', background: 'FondEcran_16.png' },
+        { video: 'FondEcran_17.mp4', background: 'FondEcran_17.png' },
+        { video: 'FondEcran_18.mp4', background: 'FondEcran_18.png' },
+        { video: 'FondEcran_19.mp4', background: 'FondEcran_19.png' },
+        { video: 'FondEcran_20.mp4', background: 'FondEcran_20.png' }
         // Ajoutez ici les noms de vos autres vidéos et images de fond
     ];
 
