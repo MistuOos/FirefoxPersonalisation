@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+video {
+    width: 100%;
+    height: 100%;
+    transition:0.5s;
+    filter: blur(8px);
+}
+
+video:hover {
+    filter: blur(0px);
+    transition: 0.5s;
+}
