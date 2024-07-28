@@ -7,6 +7,7 @@ body, html {
 }
 
 /* ---------------- Fond Ecran ---------------- */
+
 .background-overlay {
     position: fixed;
     top: 0;
@@ -45,20 +46,36 @@ video {
     object-fit: cover;
 }
 
+/* ---------------- Content Container ---------------- */
+
+.ContentContainer {
+    position:absolute;
+    transform: translate(-50%,0);
+    top: 20%;
+    left: 50%;
+    display: grid;
+    grid-template-areas:
+    "search search search search search"
+    "shortcut_1 shortcut_2 shortcut_3 shortcut_4 shortcut_5"
+    "shortcut_6 shortcut_7 shortcut_8 shortcut_9 shortcut_10"
+    "item_1 item_2 item_3 item_4 item_5";
+    grid-gap: 1em;
+}
+
 /* ---------------- Raccourcis ---------------- */
 
-.Raccourcis {
-    #background-color: deepskyblue;
-    position:absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width:50%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:auto;
-    grid-gap: 1em;
-    word-wrap: break-word;
+.Raccourci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
+    height:4em;
+    width:4em;
+    border-radius: 10px;
+    overflow: hidden;
+    transition:0.5s ease-in-out;
+    z-index:1;
+    background-color: rgba(0,0,0,0.9);
 }
 
 .Raccourci::before {
@@ -69,26 +86,20 @@ video {
     width: 100%;
     height: 100%;
     background-size: cover;
-    filter: opacity(60%);
+    filter:opacity(0.3);
     z-index: -1;
-}
-
-.Raccourci {
-    position:relative;
-    display: grid;
-    grid-template-columns:1fr 3fr ;
-    background-color: rgba(200,200,200,0.9);
-    min-height:100px;
-    place-items: center;
-    left:5%;
-    border-radius: 10px;
-    overflow: hidden;
 }
 
 .Raccourci:hover{
     cursor:pointer;
-    transform: scale(1.01);
-    background-color:rgba(255,255,255,1);
+    background-color: rgba(0,0,0,0);
+    width:10em;
+    transition:0.5s ease-in-out;
+
+}
+
+.Raccourci:hover::before {
+    filter:opacity(1);
 }
 
 .icone {
@@ -97,51 +108,52 @@ video {
     overflow: hidden;
     object-fit: cover;
     object-position: left;
+
 }
 
 #twShortcut::before {
+    grid-area: shortcut_1;
     background-image: url("../img/FondRaccourci/TwitchBackground.png");
 }
 
 #youtubeShortcut::before {
+    grid-area: shortcut_2;
     background-image: url("../img/FondRaccourci/YtbBackground.png");
 }
 
 #GmailShortcut::before {
+    grid-area: shortcut_3;
     background-image: url("../img/FondRaccourci/GmailBackground.png");
 }
 
 #UttShortcut::before {
+    grid-area: shortcut_4;
     background-image: url("../img/FondRaccourci/UTTBackground.png");
 }
 /* ----------------------------- Search bar ----------------------------- */
 
 form {
-    justify-self: center;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    width: 60%;
+    grid-area: search;
     border-radius: 10px;
     display:flex;
     position:relative;
     padding-bottom: 5%;
+    justify-content: center;
 }
 
 input {
-    width:100%;
+    width: 100%;
     height:100%;
     background-color:rgba(255,255,255,0.6);
     border-radius: 10px;
     padding:10px;
     border:none;
     outline:none;
-    transition: all 0.3s;
-    transition-property: width, border-radius;
     position:relative;
 }
 
 input:not(:placeholder-shown) {
-    width: calc(100% - 10%);
+    width: 15em;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
@@ -151,7 +163,7 @@ input:not(:placeholder-shown) + button {
 }
 
 button {
-    width:10%;
+    width:5em;
     border: 0;
     color:black;
     border-bottom-right-radius: 10px;
@@ -162,7 +174,6 @@ button {
     position: relative;
     top: 0;
     right: 0;
-    transition: all 0.3s;
 }
 
 button:hover{
