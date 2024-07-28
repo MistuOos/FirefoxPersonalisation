@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function (){
     const selectedVideo = videos[randomIndex];
 
     // Mettre à jour l'image de fond
-    backgroundOverlay.style.backgroundImage = `url('img/${selectedVideo.background}')`;
+    backgroundOverlay.style.backgroundImage = `url('img/Background/${selectedVideo.background}')`;
 
     /*
     setTimeout(function() {

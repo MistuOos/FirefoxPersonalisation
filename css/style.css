@@ -56,29 +56,64 @@ video {
     width:50%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows:1fr 2fr 2fr;
-    grid-row-gap: 30%;
-    grid-column-gap: 5%;
+    grid-template-rows:auto;
+    grid-gap: 1em;
     word-wrap: break-word;
 }
 
+.Raccourci::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: opacity(60%);
+    z-index: -1;
+}
+
 .Raccourci {
+    position:relative;
     display: grid;
     grid-template-columns:1fr 3fr ;
-    grid-gap:1%;
+    background-color: rgba(200,200,200,0.9);
+    min-height:100px;
     place-items: center;
-    background-color:rgba(200,200,200,0.3);
     left:5%;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .Raccourci:hover{
     cursor:pointer;
     transform: scale(1.01);
-    background-color:rgba(255,255,255,0.8);
+    background-color:rgba(255,255,255,1);
 }
 
+.icone {
+    height:32px;
+    width:34px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: left;
+}
 
+#twShortcut::before {
+    background-image: url("../img/FondRaccourci/TwitchBackground.png");
+}
+
+#youtubeShortcut::before {
+    background-image: url("../img/FondRaccourci/YtbBackground.png");
+}
+
+#GmailShortcut::before {
+    background-image: url("../img/FondRaccourci/GmailBackground.png");
+}
+
+#UttShortcut::before {
+    background-image: url("../img/FondRaccourci/UTTBackground.png");
+}
 /* ----------------------------- Search bar ----------------------------- */
 
 form {
@@ -89,6 +124,7 @@ form {
     border-radius: 10px;
     display:flex;
     position:relative;
+    padding-bottom: 5%;
 }
 
 input {
@@ -139,15 +175,7 @@ label {
     overflow: hidden;
 }
 
-/* ----------------------------- Icones ----------------------------- */
 
-.icone {
-    height:32px;
-    width:34px;
-    overflow: hidden;
-    object-fit: cover;
-    object-position: left;
-}
 
 
 
