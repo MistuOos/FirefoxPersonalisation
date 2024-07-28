@@ -4,4 +4,6 @@ git add .
 
 git commit -m ""
 
-git push origin main
+git push -u origin master
+
+git pull origin master
