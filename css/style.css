@@ -64,6 +64,7 @@ video {
 
 /* ---------------- Raccourcis ---------------- */
 
+
 .Raccourci {
     display: flex;
     justify-content: center;
@@ -79,6 +80,7 @@ video {
 }
 
 .Raccourci::before {
+    justify-self: center;
     content: '';
     position: absolute;
     top: 0;
@@ -142,7 +144,7 @@ form {
 }
 
 input {
-    width: 100%;
+    width: 25em;
     height:100%;
     background-color:rgba(255,255,255,0.6);
     border-radius: 10px;
@@ -153,7 +155,7 @@ input {
 }
 
 input:not(:placeholder-shown) {
-    width: 15em;
+    width: 20em;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
