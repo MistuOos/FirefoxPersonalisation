@@ -1,10 +1,5 @@
 /* ------------------- Refresh cash on reload ------------------- */
 
-window.onload = function() {
-    if (!window.location.search.includes('noCache')) {
-        window.location.href = window.location.href.split('?')[0] + '?noCache=' + new Date().getTime();
-    }
-};
 
 /* ------------------- Affichage Fond Ecran ------------------- */
 document.addEventListener("DOMContentLoaded", function (){
