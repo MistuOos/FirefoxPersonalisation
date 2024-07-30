@@ -1,6 +1,3 @@
-/* ------------------- Refresh cash on reload ------------------- */
-
-
 /* ------------------- Affichage Fond Ecran ------------------- */
 document.addEventListener("DOMContentLoaded", function (){
     const videoSource = document.getElementById('video-source');
