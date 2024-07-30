@@ -6,6 +6,12 @@ body, html {
     overflow: hidden;
 }
 
+:root{
+    --nb-raccourcis:4;
+    --gap-raccourcis:1em;
+    --dim-raccourcis:4em;
+}
+
 /* ---------------- Fond Ecran ---------------- */
 
 .background-overlay {
@@ -18,27 +24,28 @@ body, html {
     background-position: center;
     filter: blur(8px);
 }
-.container{
+
+.container {
     width: 100vw;
     height: 100vh;
-    position:relative;
+    position: relative;
 }
 
 .video-container {
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    transition:1s ease-in-out;
+    transition: 1s ease-in-out;
     scale: 1.03;
-    filter:blur(8px);
+    filter: blur(8px);
 }
 
 .video-container:hover {
-    transition:1s ease-in-out;
-    filter:blur(0px);
+    transition: 1s ease-in-out;
+    filter: blur(0px);
 }
 
 video {
@@ -50,15 +57,15 @@ video {
 /* ---------------- Content Container ---------------- */
 
 .ContentContainer {
-    position:absolute;
-    transform: translate(-50%,0);
+    position: absolute;
+    transform: translate(-50%, 0);
     top: 20%;
     left: 50%;
+    width: 25%;
     display: grid;
     grid-template-areas:
     "search search search search search"
-    "shortcut_1 shortcut_2 shortcut_3 shortcut_4 shortcut_5"
-    "shortcut_6 shortcut_7 shortcut_8 shortcut_9 shortcut_10"
+    "raccourcis raccourcis raccourcis raccourcis raccourcis"
     "item_1 item_2 item_3 item_4 item_5";
     grid-gap: 1em;
 }
@@ -66,93 +73,93 @@ video {
 /* ---------------- Raccourcis ---------------- */
 
 
+.containerRaccourcis {
+    grid-area: raccourcis;
+    position: relative;
+    display: flex;
+    left:50%;
+    transform: translateX(calc(-1*((var(--dim-raccourcis)*var(--nb-raccourcis) + var(--gap-raccourcis)*var(--nb-raccourcis))/2)));
+    gap: var(--gap-raccourcis);
+}
+
 .Raccourci {
     display: flex;
     justify-content: center;
     align-items: center;
-    position:relative;
-    height:4em;
-    width:4em;
+    position: relative;
+    height: var(--dim-raccourcis);
+    width: var(--dim-raccourcis);
     border-radius: 10px;
     overflow: hidden;
-    transition:0.5s ease-in-out;
-    z-index:1;
-    background-color: rgba(0,0,0,0.9);
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .Raccourci::before {
-    justify-self: center;
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
-    filter:opacity(0.3);
+    filter: opacity(0.3);
     z-index: -1;
 }
 
-.Raccourci:hover{
-    cursor:pointer;
-    background-color: rgba(0,0,0,0);
-    width:10em;
-    transition:0.5s ease-in-out;
-
+.Raccourci:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    width: 10em;
 }
 
 .Raccourci:hover::before {
-    filter:opacity(1);
+    filter: opacity(1);
 }
 
 .icone {
-    height:32px;
-    width:34px;
+    height: 32px;
+    width: 34px;
     overflow: hidden;
     object-fit: cover;
     object-position: left;
-
 }
 
 #twShortcut::before {
-    grid-area: shortcut_1;
     background-image: url("../img/FondRaccourci/TwitchBackground.png");
 }
 
 #youtubeShortcut::before {
-    grid-area: shortcut_2;
     background-image: url("../img/FondRaccourci/YtbBackground.png");
 }
 
 #GmailShortcut::before {
-    grid-area: shortcut_3;
     background-image: url("../img/FondRaccourci/GmailBackground.png");
 }
 
 #UttShortcut::before {
-    grid-area: shortcut_4;
     background-image: url("../img/FondRaccourci/UTTBackground.png");
 }
+
 /* ----------------------------- Search bar ----------------------------- */
 
 form {
     grid-area: search;
     border-radius: 10px;
-    display:flex;
-    position:relative;
+    display: flex;
+    position: relative;
     padding-bottom: 5%;
     justify-content: center;
 }
 
 input {
     width: 25em;
-    height:100%;
-    background-color:rgba(255,255,255,0.6);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
-    padding:10px;
-    border:none;
-    outline:none;
-    position:relative;
+    padding: 10px;
+    border: none;
+    outline: none;
+    position: relative;
 }
 
 input:not(:placeholder-shown) {
@@ -166,12 +173,12 @@ input:not(:placeholder-shown) + button {
 }
 
 button {
-    width:5em;
+    width: 5em;
     border: 0;
-    color:black;
+    color: black;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
-    background-color:rgba(200,200,200,0.6);
+    background-color: rgba(200, 200, 200, 0.6);
     font-weight: bold;
     display: none;
     position: relative;
@@ -179,9 +186,9 @@ button {
     right: 0;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
-    background-color:rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 
 label {

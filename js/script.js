@@ -1,3 +1,11 @@
+/* ------------------- Refresh cash on reload ------------------- */
+
+window.onload = function() {
+    if (!window.location.search.includes('noCache')) {
+        window.location.href = window.location.href.split('?')[0] + '?noCache=' + new Date().getTime();
+    }
+};
+
 /* ------------------- Affichage Fond Ecran ------------------- */
 document.addEventListener("DOMContentLoaded", function (){
     const videoSource = document.getElementById('video-source');
@@ -85,4 +93,5 @@ document.getElementById('GmailShortcut').addEventListener('click', function (){
 document.getElementById('UttShortcut').addEventListener('click', function (){
     window.open('https://cas.utt.fr/cas/login?service=https://ent2.utt.fr/uPortal/Login', '_blank');
 });
+
 
