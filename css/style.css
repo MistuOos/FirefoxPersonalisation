@@ -57,16 +57,19 @@ video {
 /* ---------------- Content Container ---------------- */
 
 .ContentContainer {
+    max-width: 23em;
     position: absolute;
     transform: translate(-50%, 0);
     top: 20%;
     left: 50%;
     display: grid;
     grid-template-areas:
-    "search search search search search"
-    "raccourcis raccourcis raccourcis raccourcis raccourcis"
-    "item_1 item_2 item_3 item_4 item_5";
+    "search search search search "
+    "raccourcis raccourcis raccourcis raccourcis "
+    "raccourcis raccourcis raccourcis raccourcis "
+    "item_1 item_2 item_3 item_4 ";
     grid-gap: 1em;
+
 }
 
 /* ---------------- Raccourcis ---------------- */
@@ -76,15 +79,16 @@ video {
     grid-area: raccourcis;
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     left:50%;
     transform: translateX(calc(-1*((var(--dim-raccourcis)*var(--nb-raccourcis) + var(--gap-raccourcis)*var(--nb-raccourcis))/2)));
     gap: var(--gap-raccourcis);
-
 }
 
 .icone {
     transition: transform 0.5s ease-in-out;
 }
+
 
 .link {
     display: flex;
@@ -98,6 +102,7 @@ video {
 }
 
 .Raccourci {
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +129,7 @@ video {
 .Raccourci:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0);
-    width: 10em;
+    width: 8em;
 }
 
 .Raccourci:hover .icone {
@@ -146,7 +151,7 @@ video {
     transition: opacity 0.8s; 
     position: absolute; 
     bottom:30%;
-    left: 50%; 
+    left: 55%; 
     color: rgb(255, 255, 255); 
     white-space: nowrap;
 }
@@ -178,6 +183,22 @@ video {
 
 #UttShortcut::before {
     background-image: url("../img/FondRaccourci/UTTBackground.png");
+}
+
+#GitHubShortCut::before {
+    background-image: url("../img/FondRaccourci/GitHubBackground.png");
+}
+
+#NotionShortCut::before {
+    background-image: url("../img/FondRaccourci/NotionBackground.png");
+}
+
+#UttArenaShortCut::before {
+    background-image: url("../img/FondRaccourci/UaBackground.png");
+}
+
+#ChatGPTShortCut::before {
+    background-image: url("../img/FondRaccourci/ChatGPTBackground.png");
 }
 
 
