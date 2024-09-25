@@ -1,0 +1,207 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+:root{
+    --nb-raccourcis:4;
+    --gap-raccourcis:1em;
+    --dim-raccourcis:4em;
+}
+
+/* ---------------- Fond Ecran ---------------- */
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 1s ease-in-out;
+    scale: 1.03;
+    filter: blur(8px);
+}
+
+.video-container:hover {
+    transition: 1s ease-in-out;
+    filter: blur(0px);
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ---------------- Content Container ---------------- */
+
+.ContentContainer {
+    position: absolute;
+    transform: translate(-50%, 0);
+    top: 20%;
+    left: 50%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+    "search search search search search"
+    "raccourcis raccourcis raccourcis raccourcis raccourcis"
+    "item_1 item_2 item_3 item_4 item_5";
+    grid-gap: 1em;
+}
+
+/* ---------------- Raccourcis ---------------- */
+
+
+.containerRaccourcis {
+    grid-area: raccourcis;
+    position: relative;
+    display: flex;
+    left:50%;
+    transform: translateX(calc(-1*((var(--dim-raccourcis)*var(--nb-raccourcis) + var(--gap-raccourcis)*var(--nb-raccourcis))/2)));
+    gap: var(--gap-raccourcis);
+}
+
+.Raccourci {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: var(--dim-raccourcis);
+    width: var(--dim-raccourcis);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.Raccourci::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: opacity(0.3);
+    z-index: -1;
+}
+
+.Raccourci:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    width: 10em;
+}
+
+.Raccourci:hover::before {
+    filter: opacity(1);
+}
+
+.icone {
+    height: 32px;
+    width: 34px;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: left;
+}
+
+#twShortcut::before {
+    background-image: url("../img/FondRaccourci/TwitchBackground.png");
+}
+
+#youtubeShortcut::before {
+    background-image: url("../img/FondRaccourci/YtbBackground.png");
+}
+
+#GmailShortcut::before {
+    background-image: url("../img/FondRaccourci/GmailBackground.png");
+}
+
+#UttShortcut::before {
+    background-image: url("../img/FondRaccourci/UTTBackground.png");
+}
+
+/* ----------------------------- Search bar ----------------------------- */
+
+form {
+    grid-area: search;
+    border-radius: 10px;
+    display: flex;
+    position: relative;
+    padding-bottom: 2%;
+    justify-content: center;
+}
+
+input {
+    width: 25em;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    position: relative;
+}
+
+input:not(:placeholder-shown) {
+    width: 20em;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+input:not(:placeholder-shown) + button {
+    display: block;
+}
+
+button {
+    width: 5em;
+    border: 0;
+    color: black;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(200, 200, 200, 0.6);
+    font-weight: bold;
+    display: none;
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+label {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+
+
+
+
