@@ -66,24 +66,4 @@ function performSearch(event){
     document.getElementById('msg').value = '';
 }
 
-/* ------------------- YTB Raccourci ------------------- */
-document.getElementById('youtubeShortcut').addEventListener('click', function (){
-    window.open('https://www.youtube.com', '_blank');
-});
-
-/* ------------------- Twitch Raccourci ------------------- */
-document.getElementById('twShortcut').addEventListener('click', function (){
-    window.open('https://www.twitch.tv/', '_blank');
-});
-
-/* ------------------- Gmail Raccourci ------------------- */
-document.getElementById('GmailShortcut').addEventListener('click', function (){
-    window.open('https://mail.google.com', '_blank');
-});
-
-/* ------------------- UTT Raccourci ------------------- */
-document.getElementById('UttShortcut').addEventListener('click', function (){
-    window.open('https://cas.utt.fr/cas/login?service=https://ent2.utt.fr/uPortal/Login', '_blank');
-});
-
 

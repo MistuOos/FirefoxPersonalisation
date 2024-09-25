@@ -61,7 +61,6 @@ video {
     transform: translate(-50%, 0);
     top: 20%;
     left: 50%;
-    width: 100%;
     display: grid;
     grid-template-areas:
     "search search search search search"
@@ -80,6 +79,22 @@ video {
     left:50%;
     transform: translateX(calc(-1*((var(--dim-raccourcis)*var(--nb-raccourcis) + var(--gap-raccourcis)*var(--nb-raccourcis))/2)));
     gap: var(--gap-raccourcis);
+
+}
+
+.icone {
+    transition: transform 0.5s ease-in-out;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display: flex;
+    height: 100%; /* Prend toute la hauteur du Raccourci */
+    width:100%;
+    text-decoration: none; /* Supprime le soulignement */
 }
 
 .Raccourci {
@@ -112,11 +127,36 @@ video {
     width: 10em;
 }
 
+.Raccourci:hover .icone {
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(-20px);
+}
+
 .Raccourci:hover::before {
     filter: opacity(1);
 }
 
-.icone {
+.Raccourci_clair:hover::before{
+    filter:opacity(0.3);
+}
+
+.raccourci_name {
+    visibility: hidden; 
+    opacity: 0; 
+    transition: opacity 0.8s; 
+    position: absolute; 
+    bottom:30%;
+    left: 50%; 
+    color: rgb(255, 255, 255); 
+    white-space: nowrap;
+}
+
+.Raccourci:hover .raccourci_name {
+    visibility: visible; 
+    opacity: 1;
+}
+
+.icone_picture {
     height: 32px;
     width: 34px;
     overflow: hidden;
@@ -139,6 +179,8 @@ video {
 #UttShortcut::before {
     background-image: url("../img/FondRaccourci/UTTBackground.png");
 }
+
+
 
 /* ----------------------------- Search bar ----------------------------- */
 
