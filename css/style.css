@@ -65,18 +65,20 @@ video {
     display: grid;
     grid-template-areas:
     "search search search search "
-    "raccourcis raccourcis raccourcis raccourcis "
-    "raccourcis raccourcis raccourcis raccourcis "
+    "block1 block1 block1 block1 "
+    "block1 block1 block1 block1 "
+    "block2 block2 block2 block2 "
+    "block2 block2 block2 block2 "
+    "block3 block3 block3 block3 "
+    "block3 block3 block3 block3 "
     "item_1 item_2 item_3 item_4 ";
-    grid-gap: 1em;
+    grid-gap: 0.5em;
 
 }
 
 /* ---------------- Raccourcis ---------------- */
 
-
-.containerRaccourcis {
-    grid-area: raccourcis;
+.blockcontainerRaccourcis{
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -84,6 +86,19 @@ video {
     transform: translateX(calc(-1*((var(--dim-raccourcis)*var(--nb-raccourcis) + var(--gap-raccourcis)*var(--nb-raccourcis))/2)));
     gap: var(--gap-raccourcis);
 }
+
+.blockcontainerRaccourcis1 {
+    grid-area: block1;
+}
+
+.blockContainerRaccourcis2{
+    grid-area: block2;
+}
+
+.blockContainerRaccourcis3{
+    grid-area: block3;
+}
+
 
 .icone {
     transition: transform 0.5s ease-in-out;
@@ -201,6 +216,17 @@ video {
     background-image: url("../img/FondRaccourci/ChatGPTBackground.png");
 }
 
+#RootmeShortCut::before {
+    background-image: url("../img/FondRaccourci/RootmeBackground.png");
+}
+
+#TryHackMeShortCut::before {
+    background-image: url("../img/FondRaccourci/TryhackmeBackground.png");
+}
+
+#GoogleAgendaShortCut::before {
+    background-image: url("../img/FondRaccourci/GoogleAgendaBackground.png");
+}
 
 
 /* ----------------------------- Search bar ----------------------------- */
